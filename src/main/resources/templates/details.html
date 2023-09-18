@@ -5,10 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>pizza list </title>
+    <title>pizza details</title>
 </head>
 <body>
-<div th:if="${pizzas.size()>0}">
+<div>
+
     <table>
         <thead>
         <tr>
@@ -18,16 +19,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="pizza : ${pizzas}">
+        <tr>
             <td th:text="${pizza.name}"></td>
             <td th:text="${pizza.description}"></td>
             <td th:text="${pizza.price}"></td>
-            <td><a th:href="@{/pizza/show/{id} (id=${pizza.id})}">dettagli pizza</a></td>
         </tr>
         </tbody>
     </table>
-</div>
-<div th:unless="${pizzas.size>0}">non ci sono pizze</div>
+
 </div>
 </body>
 </html>
